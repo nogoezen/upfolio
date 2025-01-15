@@ -28,6 +28,12 @@ const skills: Skill[] = [
     icon: <Server className="w-8 h-8" />,
     technologies: ["Git", "Figma", "Responsive Design", "SEO", "Performance Optimization"],
     color: "from-purple-400 to-purple-600"
+  },
+  {
+    category: "Marketing & Communication",
+    icon: <Server className="w-8 h-8" />,
+    technologies: ["Digital Marketing", "Content Writing", "Social Media Strategy", "Brand Communication", "Copywriting"],
+    color: "from-orange-400 to-orange-600"
   }
 ]
 
