@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
 
 interface Project {
@@ -16,9 +15,9 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Next.js Portfolio",
-    description: "A modern and animated portfolio built with Next.js and Framer Motion.",
+    description: "A modern portfolio built with Next.js.",
     image: "/images/portfolio.jpg",
-    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    technologies: ["Next.js", "React", "Tailwind CSS"],
     githubLink: "https://github.com/your-username/portfolio",
     liveLink: "https://your-portfolio.com"
   },
@@ -34,10 +33,8 @@ const projects: Project[] = [
 ];
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
-  <motion.div
+  <div
     className="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-    whileHover={{ scale: 1.03 }}
-    transition={{ duration: 0.3 }}
   >
     <div className="relative">
       <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
@@ -54,51 +51,39 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
         ))}
       </div>
       <div className="flex justify-between">
-        <motion.a
+        <a
           href={project.githubLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200"
-          whileHover={{ scale: 1.05 }}
         >
           <GithubIcon className="w-5 h-5 mr-2" /> Source code
-        </motion.a>
-        <motion.a
+        </a>
+        <a
           href={project.liveLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-blue-500 hover:text-blue-600 transition-colors duration-200"
-          whileHover={{ scale: 1.05 }}
         >
           <ExternalLinkIcon className="w-5 h-5 mr-2" /> Live demo
-        </motion.a>
+        </a>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-16 text-center text-gray-800 dark:text-white"
-        >
+        <h2 className="text-4xl font-bold mb-16 text-center text-gray-800 dark:text-white">
           My Projects
-        </motion.h2>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
+          {projects.map((project) => (
+            <div key={project.title}>
               <ProjectCard project={project} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
