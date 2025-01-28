@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
             className="text-center md:text-left"
           >
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Haritiana Randria</h2>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">Next.js Frontend Developer</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">Next.js Developer | Digital Marketer | Content Strategist</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -91,9 +91,10 @@ const Footer: React.FC = () => {
           className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center"
         >
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Designed with passion using{' '}
-            <span className="text-blue-500 dark:text-blue-400">Next.js</span> and{' '}
-            <span className="text-blue-500 dark:text-blue-400">Tailwind CSS</span>
+            Bridging technology and communication with{' '}
+            <span className="text-blue-500 dark:text-blue-400">Next.js</span>, {' '}
+            <span className="text-blue-500 dark:text-blue-400">Digital Marketing</span>, and {' '}
+            <span className="text-blue-500 dark:text-blue-400">Strategic Content</span>
           </p>
         </motion.div>
       </div>

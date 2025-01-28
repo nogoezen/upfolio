@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Code, MessageCircle, TrendingUp } from 'lucide-react'
 
 // Hero section component
 const Hero = () => {
@@ -12,8 +12,18 @@ const Hero = () => {
           Haritiana Randria
         </h1>
         <p className="text-xl mb-8 text-gray-600 dark:text-gray-300 animate-fade-in-up">
-          Next.js Frontend Developer | Laravel Developer
+          Next.js Developer | Digital Marketer | Content Strategist
         </p>
+        <div className="mb-8 flex justify-center space-x-4">
+          <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+            <Code className="w-6 h-6 text-blue-500" />
+            <span>Technical Innovation</span>
+            <MessageCircle className="w-6 h-6 text-green-500 ml-4" />
+            <span>Strategic Communication</span>
+            <TrendingUp className="w-6 h-6 text-purple-500 ml-4" />
+            <span>Digital Marketing</span>
+          </div>
+        </div>
         <div className="animate-fade-in flex justify-center space-x-4">
           <Button size="lg" className="group bg-primary hover:bg-primary/90">
             View my projects
