@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Phone, MapPin } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, Github, Facebook, Dribbble } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" className="py-20 bg-gray-100 dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -87,20 +87,46 @@ const Contact: React.FC = () => {
             <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Informations de contact</h3>
             <div className="flex items-center space-x-4">
               <Mail className="w-6 h-6 text-blue-500" />
-              <span className="text-gray-600 dark:text-gray-300">contact@example.com</span>
+              <span className="text-gray-600 dark:text-gray-300">ninokirisan@gmail.com</span>
             </div>
             <div className="flex items-center space-x-4">
               <Phone className="w-6 h-6 text-blue-500" />
-              <span className="text-gray-600 dark:text-gray-300">+33 1 23 45 67 89</span>
+              <span className="text-gray-600 dark:text-gray-300">+1 (819) 979-2306 </span>
             </div>
             <div className="flex items-center space-x-4">
               <MapPin className="w-6 h-6 text-blue-500" />
-              <span className="text-gray-600 dark:text-gray-300">Paris, France</span>
+              <span className="text-gray-600 dark:text-gray-300">Trois-Rivières, Canada</span>
             </div>
             <div className="mt-12">
               <h4 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Suivez-moi</h4>
               <div className="flex space-x-4">
-                {/* Ajoutez ici vos icônes de réseaux sociaux */}
+                <motion.a
+                  href="https://facebook.com/your-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="text-blue-500 hover:text-blue-600 transition-colors"
+                >
+                  <Facebook className="w-6 h-6" />
+                </motion.a>
+                <motion.a
+                  href="https://github.com/nogoezen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="text-blue-500 hover:text-blue-600 transition-colors"
+                >
+                  <Github className="w-6 h-6" />
+                </motion.a>
+                <motion.a
+                  href="https://dribbble.com/your-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  className="text-blue-500 hover:text-blue-600 transition-colors"
+                >
+                  <Dribbble className="w-6 h-6" />
+                </motion.a>
               </div>
             </div>
           </motion.div>

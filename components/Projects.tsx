@@ -19,14 +19,14 @@ const projects: Project[] = [
     description: "A modern and animated portfolio built with Next.js and Framer Motion.",
     image: "/images/portfolio.jpg",
     technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/your-username/portfolio",
-    liveLink: "https://your-portfolio.com"
+    githubLink: "https://github.com/nogoezen/upfolio",
+    liveLink: "https://upfolio.vercel.app/"
   },
   {
-    title: "Mada Safari Tour - Laravel",
-    description: "Custom e-commerce site developed with Laravel.",
+    title: "Monitory CMS - Not another CMS",
+    description: "Custom e-commerce site developed with Symfony and React.",
     image: "/images/ecommerce.jpg",
-    technologies: ["Laravel", "Javascript", "PHP", "MySQL"],
+    technologies: ["Symgony", "Javascript", "PHP", "MySQL"],
     githubLink: "https://github.com/your-username/ecommerce-wp",
     liveLink: "https://your-ecommerce.com"
   },
@@ -79,7 +79,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

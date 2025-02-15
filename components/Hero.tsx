@@ -5,6 +5,13 @@ import { ArrowRight } from 'lucide-react'
 
 // Hero section component
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20">
       <div className="text-center max-w-3xl mx-auto px-4">
@@ -15,11 +22,20 @@ const Hero = () => {
           Next.js Frontend Developer | Laravel Developer
         </p>
         <div className="animate-fade-in flex justify-center space-x-4">
-          <Button size="lg" className="group bg-primary hover:bg-primary/90">
+          <Button 
+            size="lg" 
+            className="group bg-primary hover:bg-primary/90"
+            onClick={() => scrollToSection('projects')}
+          >
             View my projects
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline" className="group">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="group"
+            onClick={() => scrollToSection('contact')}
+          >
             Contact me
           </Button>
         </div>
