@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin } from 'lucide-react';
-import { Mail, ChevronUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronUp } from 'lucide-react';
 
 const socialLinks = [
   { icon: <Github className="w-5 h-5" />, url: 'https://github.com/nogoezen', label: 'GitHub' },
