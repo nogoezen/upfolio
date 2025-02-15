@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GithubIcon, Linkedin, Twitter, Mail, ChevronUp } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
+import { Mail, ChevronUp } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <GithubIcon className="w-5 h-5" />, url: 'https://github.com/nogoezen', label: 'GitHub' },
+  { icon: <Github className="w-5 h-5" />, url: 'https://github.com/nogoezen', label: 'GitHub' },
   { icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/haritiana-fe-randria', label: 'LinkedIn' },
   { icon: <Mail className="w-5 h-5" />, url: 'mailto:ninokirisan@gmail.com', label: 'Email' },
 ];

@@ -3,31 +3,19 @@
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from './button';
+import Link from 'next/link';
 
-export function LanguageSwitcher() {
-  const locale = useLocale();
-  const router = useRouter();
+export default function LanguageSwitcher() {
   const pathname = usePathname();
-
-  const toggleLocale = () => {
-    // If we're on English, switch to French, and vice versa
-    const newLocale = pathname.includes('/fr') ? 'en' : 'fr';
-    // Remove the current locale from the pathname
-    const newPathname = pathname.replace(/^\/(en|fr)/, '');
-    // Ensure we have a leading slash and construct the new path
-    const path = newPathname || '/';
-    router.push(`/${newLocale}${path}`);
-  };
-
+  const currentLocale = useLocale();
+  
   return (
-    <Button
-      variant="ghost"
-      size="sm"
-      onClick={toggleLocale}
-      className="font-medium"
-      title={pathname.includes('/fr') ? 'Switch to English' : 'Changer en français'}
+    <Link
+      href={pathname}
+      locale={currentLocale === 'en' ? 'fr' : 'en'}
+      className="rounded-md border px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
     >
-      {pathname.includes('/fr') ? 'EN' : 'FR'}
-    </Button>
-  )
+      {currentLocale === 'en' ? 'FR' : 'EN'}
+    </Link>
+  );
 } 
