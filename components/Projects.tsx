@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GithubIcon, ExternalLinkIcon } from 'lucide-react';
+import Image from 'next/image';
 
 interface Project {
   title: string;
@@ -17,7 +18,7 @@ const projects: Project[] = [
   {
     title: "Next.js Portfolio",
     description: "A modern and animated portfolio built with Next.js and Framer Motion.",
-    image: "/images/portfolio.jpg",
+    image: "/assets/img/portfolio.png",
     technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/nogoezen/upfolio",
     liveLink: "https://upfolio.vercel.app/"
@@ -25,12 +26,20 @@ const projects: Project[] = [
   {
     title: "Monitory CMS - Not another CMS",
     description: "Custom e-commerce site developed with Symfony and React.",
-    image: "/images/ecommerce.jpg",
+    image: "/assets/img/ecommerce.jpg",
     technologies: ["Symgony", "Javascript", "PHP", "MySQL"],
     githubLink: "https://github.com/your-username/ecommerce-wp",
     liveLink: "https://your-ecommerce.com"
   },
   // Add other projects here
+  {
+    title: "Upmovie - A IMDb clone written in next.js",
+    description: "A IMDb clone written in next.js and using the TMDB API.",
+    image: "/assets/img/upmovie.png",
+    technologies: ["Next.js", "API", "Tailwind CSS"],
+    githubLink: "https://github.com/nogoezen/upmovie",
+    liveLink: "https://upmovie.vercel.app/"
+  }
 ];
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
@@ -39,8 +48,14 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
     whileHover={{ scale: 1.03 }}
     transition={{ duration: 0.3 }}
   >
-    <div className="relative">
-      <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
+    <div className="relative h-64">
+      <Image 
+        src={project.image} 
+        alt={project.title} 
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
       <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">{project.title}</h3>
     </div>

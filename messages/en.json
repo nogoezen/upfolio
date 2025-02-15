@@ -1,0 +1,48 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Haritiana Randria",
+    "subtitle": "Next.js Frontend Developer | Laravel Developer",
+    "cta": {
+      "projects": "View my projects",
+      "contact": "Contact me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "content": "I'm a passionate frontend developer specializing in Next.js, with a strong foundation in modern web technologies. My journey began with WordPress development from 2018 to 2019, before transitioning to cutting-edge frontend frameworks in 2020. In September 2024, I earned the Meta Frontend Developer Certification, further solidifying my expertise in building dynamic and scalable web applications."
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "A comprehensive overview of my technical expertise and proficiency levels in various technologies",
+    "categories": {
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "other": "Other Skills"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "form": {
+      "title": "Send me a message",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "info": {
+      "title": "Contact Information",
+      "followMe": "Follow me"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "designed": "Designed with passion using Next.js and Tailwind CSS"
+  }
+} 

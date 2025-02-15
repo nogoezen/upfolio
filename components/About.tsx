@@ -1,20 +1,18 @@
 'use client'
 
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
+import { useTranslations } from 'next-intl'
 
 // About section component
 const About = () => {
-  const words = `I'm a passionate frontend developer specializing in Next.js. 
-  With experience in WordPress from 2018 to 2019, I've evolved towards modern 
-  frontend technologies since 2022. I obtained the Meta Frontend certification 
-  in September 2024, strengthening my skills in the field.`
+  const t = useTranslations('about');
 
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-6">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">{t('title')}</h2>
         <div className="card p-8">
-          <TextGenerateEffect words={words} />
+          <TextGenerateEffect words={t('content')} />
         </div>
       </div>
     </section>

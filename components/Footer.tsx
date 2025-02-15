@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, ChevronUp } from 'lucide-react';
+import { GithubIcon, Linkedin, Twitter, Mail, ChevronUp } from 'lucide-react';
 
 const socialLinks = [
-  { icon: <Github className="w-5 h-5" />, url: 'https://github.com/nogoezen', label: 'GitHub' },
-  { icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/your-profile', label: 'LinkedIn' },
-  { icon: <Twitter className="w-5 h-5" />, url: 'https://twitter.com/your-account', label: 'Twitter' },
-  { icon: <Mail className="w-5 h-5" />, url: 'mailto:ninokiritoo@gmail.com', label: 'Email' },
+  { icon: <GithubIcon className="w-5 h-5" />, url: 'https://github.com/nogoezen', label: 'GitHub' },
+  { icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/haritiana-fe-randria', label: 'LinkedIn' },
+  { icon: <Mail className="w-5 h-5" />, url: 'mailto:ninokirisan@gmail.com', label: 'Email' },
 ];
 
 const Footer: React.FC = () => {
