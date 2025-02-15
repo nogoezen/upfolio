@@ -14,11 +14,7 @@ const nextConfig = {
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     ignoreBuildErrors: true,
-  },
-  output: 'export', // Enable static exports
-  images: {
-    unoptimized: true, // Required for static export
-  },
+  }
 };
 
 export default withNextIntl(nextConfig);
