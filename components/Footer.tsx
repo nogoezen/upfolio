@@ -7,7 +7,7 @@ import { Github, Linkedin, Mail, ChevronUp } from 'lucide-react';
 const socialLinks = [
   { icon: <Github className="w-5 h-5" />, url: 'https://github.com/nogoezen', label: 'GitHub' },
   { icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/haritiana-fe-randria', label: 'LinkedIn' },
-  { icon: <Mail className="w-5 h-5" />, url: 'mailto:ninokirisan@gmail.com', label: 'Email' },
+  { icon: <Mail className="w-5 h-5" />, url: 'mailto:ninokirisan@gmail.com', label: 'Email' }
 ];
 
 const Footer: React.FC = () => {
