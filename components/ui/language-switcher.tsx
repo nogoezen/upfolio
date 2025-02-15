@@ -1,20 +1,30 @@
 'use client'
 
 import { useLocale } from 'next-intl';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { Button } from './button';
 
 export default function LanguageSwitcher() {
+  const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
   
+  const handleLocaleChange = () => {
+    const nextLocale = currentLocale === 'en' ? 'fr' : 'en';
+    const newPathname = pathname.replace(/^\/(en|fr)/, '');
+    const path = newPathname || '/';
+    router.push(`/${nextLocale}${path}`);
+  };
+  
   return (
-    <Link
-      href={pathname}
-      locale={currentLocale === 'en' ? 'fr' : 'en'}
-      className="rounded-md border px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={handleLocaleChange}
+      className="font-medium"
+      title={currentLocale === 'en' ? 'Changer en français' : 'Switch to English'}
     >
       {currentLocale === 'en' ? 'FR' : 'EN'}
-    </Link>
+    </Button>
   );
 } 
