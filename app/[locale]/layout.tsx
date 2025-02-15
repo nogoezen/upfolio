@@ -1,7 +1,8 @@
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ui/theme-provider';
-import { NextIntlClientProvider } from 'next-intl';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { setRequestLocale } from 'next-intl/server';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -31,12 +32,10 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  let messages;
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch {
-    notFound();
-  }
+  // Enable static rendering
+  setRequestLocale(locale);
+
+  const messages = useMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -46,7 +45,6 @@ export default async function LocaleLayout({
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
           >
             {children}
           </ThemeProvider>

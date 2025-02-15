@@ -15,6 +15,10 @@ const nextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
+  output: 'export', // Enable static exports
+  images: {
+    unoptimized: true, // Required for static export
+  },
 };
 
 export default withNextIntl(nextConfig);
