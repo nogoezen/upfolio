@@ -1,8 +1,8 @@
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ui/theme-provider';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -33,19 +33,20 @@ export default async function LocaleLayout({
   }
 
   // Enable static rendering
-  setRequestLocale(locale);
+  unstable_setRequestLocale(locale);
 
-  const messages = useMessages();
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch {
+    notFound();
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-          >
+          <ThemeProvider>
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
