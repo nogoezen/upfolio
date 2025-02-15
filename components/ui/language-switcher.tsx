@@ -4,7 +4,7 @@ import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-export default function LanguageSwitcher() {
+export function LanguageSwitcher() {
   const pathname = usePathname();
   const currentLocale = useLocale();
   const nextLocale = currentLocale === 'en' ? 'fr' : 'en';
@@ -20,4 +20,6 @@ export default function LanguageSwitcher() {
       {nextLocale.toUpperCase()}
     </Link>
   );
-} 
+}
+
+export default LanguageSwitcher; 

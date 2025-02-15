@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Home, User, Code, Briefcase, Mail } from 'lucide-react'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
-import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import LanguageSwitcher from '@/components/ui/language-switcher'
 import { useTranslations } from 'next-intl'
 
 // Header component with navigation
